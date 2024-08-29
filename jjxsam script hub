@@ -1,0 +1,409 @@
+local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v24,v25) local v26={};for v41=1, #v24 do v6(v26,v0(v4(v1(v2(v24,v41,v41 + 1 )),v1(v2(v25,1 + (v41% #v25) ,1 + (v41% #v25) + 1 )))%256 ));end return v5(v26);end local v8=tonumber;local v9=string.byte;local v10=string.char;local v11=string.sub;local v12=string.gsub;local v13=string.rep;local v14=table.concat;local v15=table.insert;local v16=math.ldexp;local v17=getfenv or function() return _ENV;end ;local v18=setmetatable;local v19=pcall;local v20=select;local v21=unpack or table.unpack ;local v22=tonumber;local function v23(v27,v28,...) local v29=1;local v30;v27=v12(v11(v27,5),v7("\3\21","\96\45\59\78\212\54"),function(v42) if (v9(v42,2)==79) then local v101=0;while true do if (v101==0) then v30=v8(v11(v42,1,1));return "";end end else local v102=0;local v103;while true do if (0==v102) then v103=v10(v8(v42,16));if v30 then local v120=0;local v121;while true do if (0==v120) then v121=v13(v103,v30);v30=nil;v120=1;end if (v120==1) then return v121;end end else return v103;end break;end end end end);local function v31(v43,v44,v45) if v45 then local v104=(v43/(2^(v44-1)))%(2^(((v45-(2 -1)) -(v44-1)) + 1)) ;return v104-(v104%1) ;else local v105=(5 -3)^(v44-1) ;return (((v43%(v105 + v105))>=v105) and 1) or 0 ;end end local function v32() local v46=v9(v27,v29,v29);v29=v29 + 1 ;return v46;end local function v33() local v47=0;local v48;local v49;while true do if (v47==1) then return (v49 * 256) + v48 ;end if (v47==0) then v48,v49=v9(v27,v29,v29 + 2 );v29=v29 + 2 ;v47=1;end end end local function v34() local v50=0;local v51;local v52;local v53;local v54;while true do if (v50==0) then v51,v52,v53,v54=v9(v27,v29,v29 + 3 );v29=v29 + 4 ;v50=1;end if (v50==1) then return (v54 * 16777216) + (v53 * 65536) + (v52 * (493 -237)) + v51 ;end end end local function v35() local v55=v34();local v56=v34();local v57=1;local v58=(v31(v56,1,20) * (2^32)) + v55 ;local v59=v31(v56,21,31);local v60=((v31(v56,82 -50 )==1) and  -1) or 1 ;if (v59==(619 -(555 + 64))) then if (v58==0) then return v60 * 0 ;else local v112=0;while true do if (0==v112) then v59=1;v57=0;break;end end end elseif (v59==2047) then return ((v58==0) and (v60 * ((932 -(857 + 74))/0))) or (v60 * NaN) ;end return v16(v60,v59-1023 ) * (v57 + (v58/(2^52))) ;end local function v36(v61) local v62;if  not v61 then v61=v34();if (v61==0) then return "";end end v62=v11(v27,v29,(v29 + v61) -1 );v29=v29 + v61 ;local v63={};for v77=1, #v62 do v63[v77]=v10(v9(v11(v62,v77,v77)));end return v14(v63);end local v37=v34;local function v38(...) return {...},v20("#",...);end local function v39() local v64={};local v65={};local v66={};local v67={v64,v65,nil,v66};local v68=v34();local v69={};for v79=1,v68 do local v80=v32();local v81;if (v80==1) then v81=v32()~=0 ;elseif (v80==2) then v81=v35();elseif (v80==3) then v81=v36();end v69[v79]=v81;end v67[3]=v32();for v83=569 -(367 + 201) ,v34() do local v84=v32();if (v31(v84,928 -(214 + 713) ,1)==0) then local v108=0;local v109;local v110;local v111;while true do if (v108==1) then v111={v33(),v33(),nil,nil};if (v109==0) then local v122=0;while true do if (v122==0) then v111[3]=v33();v111[2 + 2 ]=v33();break;end end elseif (v109==1) then v111[3]=v34();elseif (v109==2) then v111[3]=v34() -(2^16) ;elseif (v109==(1 + 2)) then local v133=0;while true do if (v133==0) then v111[880 -(282 + 595) ]=v34() -(2^16) ;v111[4]=v33();break;end end end v108=2;end if (v108==0) then v109=v31(v84,2,3);v110=v31(v84,4,6);v108=1;end if (2==v108) then if (v31(v110,1,1638 -(1523 + 114) )==1) then v111[2]=v69[v111[2 + 0 ]];end if (v31(v110,2 -0 ,2)==1) then v111[3]=v69[v111[3]];end v108=3;end if (v108==3) then if (v31(v110,3,1068 -(68 + 997) )==1) then v111[4]=v69[v111[4]];end v64[v83]=v111;break;end end end end for v85=1,v34() do v65[v85-1 ]=v39();end return v67;end local function v40(v71,v72,v73) local v74=v71[1271 -(226 + 1044) ];local v75=v71[2];local v76=v71[3];return function(...) local v87=v74;local v88=v75;local v89=v76;local v90=v38;local v91=1;local v92= -1;local v93={};local v94={...};local v95=v20("#",...) -(4 -3) ;local v96={};local v97={};for v106=0,v95 do if (v106>=v89) then v93[v106-v89 ]=v94[v106 + 1 ];else v97[v106]=v94[v106 + 1 ];end end local v98=(v95-v89) + 1 ;local v99;local v100;while true do local v107=0;while true do if (v107==0) then v99=v87[v91];v100=v99[1];v107=1;end if (v107==1) then if (v100<=45) then if (v100<=22) then if (v100<=10) then if (v100<=4) then if (v100<=1) then if (v100==0) then local v136=v99[2];local v137={v97[v136](v97[v136 + 1 ])};local v138=0;for v191=v136,v99[4] do v138=v138 + 1 ;v97[v191]=v137[v138];end else v97[v99[2]]=v40(v88[v99[3]],nil,v73);end elseif (v100<=2) then v73[v99[3]]=v97[v99[119 -(32 + 85) ]];elseif (v100==3) then local v199=v88[v99[3]];local v200;local v201={};v200=v18({},{[v7("\47\105\138\133\130\43\181","\144\112\54\227\235\230\78\205")]=function(v312,v313) local v314=0;local v315;while true do if (v314==0) then v315=v201[v313];return v315[1][v315[2]];end end end,[v7("\140\23\1\249\199\82\189\44\10\228","\59\211\72\111\156\176")]=function(v316,v317,v318) local v319=v201[v317];v319[1][v319[2]]=v318;end});for v321=1,v99[4] do v91=v91 + 1 ;local v322=v87[v91];if (v322[1 + 0 ]==25) then v201[v321-1 ]={v97,v322[960 -(892 + 65) ]};else v201[v321-1 ]={v72,v322[3]};end v96[ #v96 + 1 ]=v201;end v97[v99[2]]=v40(v199,v200,v73);else v97[v99[2]]=v99[3]~=0 ;end elseif (v100<=7) then if (v100<=5) then v97[v99[4 -2 ]]=v99[3] + v97[v99[4]] ;elseif (v100==6) then local v204=v99[2];local v205=v97[v204];for v324=v204 + 1 ,v92 do v15(v205,v97[v324]);end else local v206=v99[2];local v207,v208=v90(v97[v206](v97[v206 + (1 -0) ]));v92=(v208 + v206) -(1 -0) ;local v209=0;for v325=v206,v92 do local v326=0;while true do if (v326==0) then v209=v209 + 1 ;v97[v325]=v207[v209];break;end end end end elseif (v100<=8) then local v143=v99[2];v97[v143](v97[v143 + 1 ]);elseif (v100>9) then v97[v99[2]]=v99[3]~=(350 -(87 + 263)) ;v91=v91 + 1 ;elseif (v99[2]==v97[v99[4]]) then v91=v91 + 1 ;else v91=v99[3];end elseif (v100<=16) then if (v100<=13) then if (v100<=11) then local v144=0;local v145;while true do if (v144==0) then v145=v99[2];v97[v145](v97[v145 + 1 ]);break;end end elseif (v100>12) then v97[v99[182 -(67 + 113) ]][v97[v99[3]]]=v97[v99[4]];else local v213=0;local v214;local v215;local v216;while true do if (v213==1) then v216=v97[v214 + 2 ];if (v216>0) then if (v215>v97[v214 + 1 ]) then v91=v99[3];else v97[v214 + 3 ]=v215;end elseif (v215<v97[v214 + 1 ]) then v91=v99[3];else v97[v214 + 3 ]=v215;end break;end if (v213==0) then v214=v99[2];v215=v97[v214];v213=1;end end end elseif (v100<=14) then local v146=v99[2];local v147,v148=v90(v97[v146](v21(v97,v146 + 1 + 0 ,v99[3])));v92=(v148 + v146) -1 ;local v149=0;for v194=v146,v92 do v149=v149 + (2 -1) ;v97[v194]=v147[v149];end elseif (v100==(12 + 3)) then v97[v99[2]]=v97[v99[3]] + v99[4] ;else v97[v99[2]]= #v97[v99[3]];end elseif (v100<=19) then if (v100<=17) then if  not v97[v99[7 -5 ]] then v91=v91 + (953 -(802 + 150)) ;else v91=v99[3];end elseif (v100>18) then local v220=v99[2];v97[v220]=v97[v220](v21(v97,v220 + 1 ,v92));else v97[v99[2]]={};end elseif (v100<=20) then v91=v99[3];elseif (v100>21) then v97[v99[2]]=v72[v99[3]];else do return;end end elseif (v100<=(88 -55)) then if (v100<=27) then if (v100<=24) then if (v100>23) then v97[v99[2]]=v97[v99[3]]%v99[4] ;else v97[v99[2]]=v73[v99[3]];end elseif (v100<=25) then v97[v99[2]]=v97[v99[5 -2 ]];elseif (v100==26) then local v225=v99[2];do return v97[v225](v21(v97,v225 + 1 ,v99[3]));end else v97[v99[2]][v97[v99[3]]]=v97[v99[4]];end elseif (v100<=30) then if (v100<=28) then local v156=v99[2];v97[v156]=v97[v156](v97[v156 + 1 ]);elseif (v100==29) then local v228=0;local v229;local v230;local v231;local v232;while true do if (v228==1) then v92=(v231 + v229) -1 ;v232=0;v228=2;end if (v228==2) then for v386=v229,v92 do v232=v232 + 1 + 0 ;v97[v386]=v230[v232];end break;end if (v228==0) then v229=v99[2];v230,v231=v90(v97[v229](v97[v229 + 1 ]));v228=1;end end else v97[v99[2]]=v97[v99[3]] + v99[4] ;end elseif (v100<=31) then local v158=0;local v159;local v160;local v161;local v162;while true do if (v158==0) then v159=v99[2];v160,v161=v90(v97[v159](v21(v97,v159 + 1 ,v99[3])));v158=1;end if (v158==1) then v92=(v161 + v159) -1 ;v162=0;v158=2;end if (2==v158) then for v346=v159,v92 do v162=v162 + 1 ;v97[v346]=v160[v162];end break;end end elseif (v100==32) then local v234=v99[2];do return v97[v234](v21(v97,v234 + 1 ,v99[3]));end else local v235=v99[2];local v236=v97[v235 + 2 ];local v237=v97[v235] + v236 ;v97[v235]=v237;if (v236>0) then if (v237<=v97[v235 + 1 ]) then local v389=0;while true do if (v389==0) then v91=v99[3];v97[v235 + 3 ]=v237;break;end end end elseif (v237>=v97[v235 + (998 -(915 + 82)) ]) then v91=v99[3];v97[v235 + 3 ]=v237;end end elseif (v100<=39) then if (v100<=(101 -65)) then if (v100<=34) then if (v97[v99[2]]==v99[4]) then v91=v91 + 1 ;else v91=v99[3];end elseif (v100>35) then local v240=0;local v241;while true do if (v240==0) then v241=v99[2];v97[v241]=v97[v241](v21(v97,v241 + 1 ,v99[3]));break;end end else local v242=0;local v243;while true do if (0==v242) then v243=v99[2];do return v21(v97,v243,v92);end break;end end end elseif (v100<=37) then v97[v99[2]]=v72[v99[3]];elseif (v100==38) then v97[v99[2]][v97[v99[3]]]=v99[4];else for v329=v99[2],v99[3] do v97[v329]=nil;end end elseif (v100<=42) then if (v100<=40) then v97[v99[2]]=v97[v99[3]] * v97[v99[4]] ;elseif (v100==41) then v97[v99[2 + 0 ]]=v97[v99[3]] * v97[v99[4]] ;elseif v97[v99[2]] then v91=v91 + 1 ;else v91=v99[3 -0 ];end elseif (v100<=43) then v97[v99[2]]=v99[3]~=0 ;elseif (v100>44) then local v247=0;local v248;local v249;local v250;while true do if (1==v247) then v250={};v249=v18({},{[v7("\113\184\234\35\74\130\251","\77\46\231\131")]=function(v392,v393) local v394=v250[v393];return v394[1188 -(1069 + 118) ][v394[4 -2 ]];end,[v7("\133\107\184\69\173\93\184\68\191\76","\32\218\52\214")]=function(v395,v396,v397) local v398=v250[v396];v398[1][v398[2]]=v397;end});v247=2;end if (0==v247) then v248=v88[v99[3]];v249=nil;v247=1;end if (v247==2) then for v400=1 -0 ,v99[4] do v91=v91 + 1 ;local v401=v87[v91];if (v401[1]==(5 + 20)) then v250[v400-1 ]={v97,v401[3 + 0 ]};else v250[v400-1 ]={v72,v401[3]};end v96[ #v96 + 1 ]=v250;end v97[v99[2]]=v40(v248,v249,v73);break;end end else local v251=v99[2];local v252=v99[4];local v253=v251 + 2 ;local v254={v97[v251](v97[v251 + 1 ],v97[v253])};for v331=1,v252 do v97[v253 + v331 ]=v254[v331];end local v255=v254[1];if v255 then v97[v253]=v255;v91=v99[3];else v91=v91 + (792 -(368 + 423)) ;end end elseif (v100<=68) then if (v100<=56) then if (v100<=50) then if (v100<=(147 -100)) then if (v100>46) then v97[v99[2]]=v99[21 -(10 + 8) ];else local v169=0;local v170;while true do if (v169==0) then v170=v99[2];v97[v170]=v97[v170](v97[v170 + 1 ]);break;end end end elseif (v100<=48) then local v171=0;local v172;local v173;while true do if (v171==1) then for v352=v172 + 1 ,v92 do v15(v173,v97[v352]);end break;end if (0==v171) then v172=v99[2];v173=v97[v172];v171=1;end end elseif (v100>49) then local v256=v99[2];do return v21(v97,v256,v256 + v99[3] );end else local v257=v99[2];local v258=v97[v257 + (7 -5) ];local v259=v97[v257] + v258 ;v97[v257]=v259;if (v258>0) then if (v259<=v97[v257 + 1 ]) then v91=v99[3];v97[v257 + 3 ]=v259;end elseif (v259>=v97[v257 + 1 ]) then local v405=0;while true do if (v405==0) then v91=v99[3];v97[v257 + 3 ]=v259;break;end end end end elseif (v100<=53) then if (v100<=51) then v97[v99[2]][v97[v99[3]]]=v99[4];elseif (v100==(494 -(416 + 26))) then v97[v99[2]]=v73[v99[3]];else v97[v99[2]]=v97[v99[3]]%v97[v99[4]] ;end elseif (v100<=(172 -118)) then v97[v99[2]]=v97[v99[3]]%v99[4] ;elseif (v100>55) then do return v97[v99[2]]();end else do return v97[v99[2]];end end elseif (v100<=62) then if (v100<=59) then if (v100<=(25 + 32)) then v97[v99[2]]=v40(v88[v99[3]],nil,v73);elseif (v100>58) then local v264=0;local v265;local v266;local v267;local v268;while true do if (v264==1) then v92=(v267 + v265) -1 ;v268=0;v264=2;end if (v264==0) then v265=v99[2];v266,v267=v90(v97[v265](v21(v97,v265 + (1 -0) ,v92)));v264=1;end if (v264==2) then for v406=v265,v92 do v268=v268 + 1 ;v97[v406]=v266[v268];end break;end end else v73[v99[3]]=v97[v99[2]];end elseif (v100<=60) then local v178=v99[2];v97[v178]=v97[v178](v21(v97,v178 + 1 ,v99[3]));elseif (v100==61) then if v97[v99[2]] then v91=v91 + 1 ;else v91=v99[3];end else local v271=0;local v272;local v273;local v274;while true do if (v271==0) then v272=v99[2];v273={v97[v272](v97[v272 + 1 ])};v271=1;end if (v271==1) then v274=438 -(145 + 293) ;for v409=v272,v99[4] do local v410=0;while true do if (v410==0) then v274=v274 + 1 ;v97[v409]=v273[v274];break;end end end break;end end end elseif (v100<=65) then if (v100<=63) then do return v97[v99[2]]();end elseif (v100==64) then local v275=0;local v276;while true do if (v275==0) then v276=v99[2];v97[v276](v21(v97,v276 + 1 ,v92));break;end end elseif (v97[v99[2]]==v99[4]) then v91=v91 + 1 ;else v91=v99[3];end elseif (v100<=66) then local v180=0;local v181;local v182;while true do if (v180==0) then v181=v99[3];v182=v97[v181];v180=1;end if (v180==1) then for v355=v181 + 1 ,v99[4] do v182=v182   .. v97[v355] ;end v97[v99[2]]=v182;break;end end elseif (v100>(497 -(44 + 386))) then local v277=0;local v278;while true do if (v277==0) then v278=v99[2];v97[v278]=v97[v278](v21(v97,v278 + 1 ,v92));break;end end else v97[v99[2]]=v99[3] + v97[v99[4]] ;end elseif (v100<=80) then if (v100<=74) then if (v100<=71) then if (v100<=69) then v97[v99[2]]=v97[v99[1489 -(998 + 488) ]][v99[4]];elseif (v100==70) then local v280=0;local v281;local v282;local v283;local v284;while true do if (v280==1) then v92=(v283 + v281) -1 ;v284=0;v280=2;end if (2==v280) then for v411=v281,v92 do local v412=0;while true do if (v412==0) then v284=v284 + 1 + 0 ;v97[v411]=v282[v284];break;end end end break;end if (v280==0) then v281=v99[2];v282,v283=v90(v97[v281](v21(v97,v281 + 1 ,v92)));v280=1;end end else v97[v99[2]]=v97[v99[3]]%v97[v99[4]] ;end elseif (v100<=(59 + 13)) then v97[v99[2]]=v97[v99[3]][v99[776 -(201 + 571) ]];elseif (v100==73) then do return;end elseif (v99[2]==v97[v99[4]]) then v91=v91 + 1 ;else v91=v99[3];end elseif (v100<=77) then if (v100<=(1213 -(116 + 1022))) then v97[v99[2]]={};elseif (v100>76) then local v286=0;while true do if (v286==0) then v97[v99[2]]=v99[3]~=0 ;v91=v91 + 1 ;break;end end else v97[v99[2]]=v97[v99[3]][v97[v99[4]]];end elseif (v100<=78) then if  not v97[v99[2]] then v91=v91 + 1 ;else v91=v99[3];end elseif (v100==79) then if (v97[v99[2]]<v97[v99[4]]) then v91=v91 + 1 ;else v91=v99[3];end else do return v97[v99[2]];end end elseif (v100<=86) then if (v100<=83) then if (v100<=81) then for v197=v99[2],v99[3] do v97[v197]=nil;end elseif (v100==82) then v97[v99[2]]=v97[v99[3]];else v91=v99[3];end elseif (v100<=84) then v97[v99[2]]= #v97[v99[3]];elseif (v100>85) then local v293=0;local v294;while true do if (v293==0) then v294=v99[2];do return v21(v97,v294,v92);end break;end end else local v295=v99[2];local v296=v99[4];local v297=v295 + 2 ;local v298={v97[v295](v97[v295 + 1 ],v97[v297])};for v341=1,v296 do v97[v297 + v341 ]=v298[v341];end local v299=v298[4 -3 ];if v299 then v97[v297]=v299;v91=v99[3];else v91=v91 + 1 ;end end elseif (v100<=89) then if (v100<=87) then if (v97[v99[2 + 0 ]]<v97[v99[14 -10 ]]) then v91=v91 + 1 ;else v91=v99[3];end elseif (v100>88) then local v301=0;local v302;while true do if (v301==0) then v302=v99[2];v97[v302](v21(v97,v302 + (3 -2) ,v92));break;end end else v97[v99[2]]=v97[v99[3]][v97[v99[4]]];end elseif (v100<=90) then v97[v99[2]]=v99[862 -(814 + 45) ];elseif (v100>91) then local v305=v99[3];local v306=v97[v305];for v344=v305 + 1 ,v99[9 -5 ] do v306=v306   .. v97[v344] ;end v97[v99[1 + 1 ]]=v306;else local v308=0;local v309;local v310;local v311;while true do if (1==v308) then v311=v97[v309 + 2 ];if (v311>0) then if (v310>v97[v309 + 1 ]) then v91=v99[3];else v97[v309 + 3 ]=v310;end elseif (v310<v97[v309 + 1 ]) then v91=v99[3];else v97[v309 + 3 ]=v310;end break;end if (0==v308) then v309=v99[2];v310=v97[v309];v308=1;end end end v91=v91 + 1 ;break;end end end end;end return v40(v39(),{},v28)(...);end return v23("LOL!0D3O0003063O00737472696E6703043O006368617203043O00627974652O033O0073756203053O0062697433322O033O0062697403043O0062786F7203053O007461626C6503063O00636F6E63617403063O00696E7365727403053O006D6174636803083O00746F6E756D62657203053O007063612O6C00243O0012173O00013O0020455O0002001217000100013O002045000100010003001217000200013O002045000200020004001217000300053O0006110003000A000100010004143O000A0001001217000300063O002045000400030007001217000500083O002045000500050009001217000600083O00204500060006000A00060300073O000100062O00193O00064O00198O00193O00044O00193O00014O00193O00024O00193O00053O001217000800013O00204500080008000B0012170009000C3O001217000A000D3O000603000B0001000100052O00193O00074O00193O00094O00193O00084O00193O000A4O00193O000B4O0052000C000B4O0038000C00014O0056000C6O00493O00013O00023O00023O00026O00F03F026O00704002264O004B00025O00122F000300014O005400045O00122F000500013O00045B0003002100012O001600076O0052000800024O0016000900014O0016000A00024O0016000B00034O0016000C00044O0052000D6O0052000E00063O00200F000F000600012O000E000C000F4O0013000B3O00022O0016000C00034O0016000D00044O0052000E00014O0054000F00014O0035000F0006000F001005000F0001000F2O0054001000014O003500100006001000100500100001001000200F0010001000012O000E000D00104O003B000C6O0013000A3O0002002018000A000A00022O00070009000A4O005900073O00010004310003000500012O0016000300054O0052000400024O0020000300044O005600036O00493O00017O00043O00027O004003053O003A25642B3A2O033O0025642B026O00F03F001C3O0006035O000100012O00258O0016000100014O0016000200024O0016000300024O004B00046O0016000500034O005200066O0051000700074O000E000500074O003000043O000100204500040004000100122F000500024O002400030005000200122F000400034O000E000200044O001300013O000200262200010018000100040004143O001800012O005200016O004B00026O0020000100024O005600015O0004143O001B00012O0016000100044O0038000100014O005600016O00493O00013O00013O00153O00024O00F0E4FD40026O003440025O00C05940025O005D3241024O0087C63241023O00406E9B5E4103053O007072696E7403043O00C2E9BE2103053O0072B69BCB44026O00F03F03193O007CA7B8ED553572B1BBB8523E76E5BDF748327AB1B7F748253203063O005613C5DE982603343O00DF4C71E6764F38FB0043D669543FF2476BD83D513FF04C38E6724B26F0456CE0715F76F4497CE03D523EF55338F669543FF2473903073O00569C2018851D2603153O0073696576655F6F665F657261746F737468656E6573025O00407A4003053O007061697273030D3O002O974AA5783C51A8904DAC273C03073O0037C7E523C81D1C03163O005CF5CB74077BBAD3361561E9DF350771BADE310060A503053O0073149ABC54013D3O00063D3O003B00013O0004143O003B000100122F000100013O00200F00020001000200200F00010002000300122F000200043O00122F000300053O00122F000400063O00064F00020010000100030004143O00100001001217000500074O001600065O00122F000700083O00122F000800094O000E000600084O005900053O00010010050005000A000400064F00030019000100050004143O00190001001217000500074O001600065O00122F0007000B3O00122F0008000C4O000E000600084O005900053O0001001217000500074O001600065O00122F0007000D3O00122F0008000E4O000E000600084O005900053O000100023900055O0012020005000F3O0012170005000F3O00122F000600104O001C000500020002001217000600114O0052000700054O003E0006000200080004143O0032000100063D000A003200013O0004143O00320001001217000B00074O0016000C5O00122F000D00123O00122F000E00134O0024000C000E00022O0052000D00094O005C000C000C000D2O000B000B0002000100062C00060028000100020004143O00280001001217000500074O001600065O00122F000700143O00122F000800154O000E000600084O005900053O00010004143O003C000100204500013O000A2O00493O00013O00013O00073O00028O00026O00F03F027O004003043O006D61746803053O00666C2O6F7203043O00737172740100012E3O00122F000100014O0051000200023O0026220001001D000100020004143O001D000100122F000300013O00262200030005000100010004143O0005000100122F000400033O001217000500043O002045000500050005001217000600043O0020450006000600062O005200076O0007000600074O001300053O000200122F000600023O00045B0004001B00012O004C00080002000700063D0008001A00013O0004143O001A00012O00280008000700072O005200096O0052000A00073O00045B0008001A00010020330002000B00070004310008001800010004310004001100012O0050000200023O0004143O0005000100262200010002000100010004143O000200012O004B00036O0052000200033O00122F000300024O005200045O00122F000500023O00045B0003002B0001000E0900020028000100060004143O002800012O000A00076O0004000700014O001B00020006000700043100030025000100122F000100023O0004143O000200012O00493O00017O00",v17(),...);
+-- ⚠️ WARNING: integrity protected!
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.7) ~  Much Love, Ferib 
+
+]]--local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "nzv project", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+local espTab = Window:MakeTab({
+    Name = "esp",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+espTab:AddButton({
+    Name = "join discord.gg/XXmNSZFshg for more scripts",
+    Callback = function()
+            
+    end    
+})
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+local espSection = espTab:AddSection({
+    Name = "esp n more"
+})
+espTab:AddButton({
+    Name = "aimbot!",
+    Callback = function()
+        local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V3/main/src/Aimbot.lua"))()
+Aimbot.Load()
+    end    
+})
+
+
+espTab:AddButton({
+    Name = "Boost fps",
+    Callback = function()
+        local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+        local g = game
+        local w = g.Workspace
+        local l = g.Lighting
+        local t = w.Terrain
+        t.WaterWaveSize = 0
+        t.WaterWaveSpeed = 0
+        t.WaterReflectance = 0
+        t.WaterTransparency = 0
+        l.GlobalShadows = false
+        l.FogEnd = 9e9
+        l.Brightness = 0
+        settings().Rendering.QualityLevel = "Level01"
+        for i, v in pairs(g:GetDescendants()) do
+            if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+                v.Material = "Plastic"
+                v.Reflectance = 0
+            elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+                v.Transparency = 1
+            elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                v.Lifetime = NumberRange.new(0)
+            elseif v:IsA("Explosion") then
+                v.BlastPressure = 1
+                v.BlastRadius = 1
+            elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+                v.Enabled = false
+            elseif v:IsA("MeshPart") then
+                v.Material = "Plastic"
+                v.Reflectance = 0
+                v.TextureID = 10385902758728957
+            end
+        end
+        for i, e in pairs(l:GetChildren()) do
+            if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                e.Enabled = false
+            end
+        end
+    end    
+})
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+OrionLib:MakeNotification({
+    Name = "WARN!",
+    Content = "script made by nzv",
+    Image = "rbxassetid://4483345998",
+    Time = 100
+})
+
+
+OrionLib:MakeNotification({
+    Name = "WARN!",
+    Content = "script made by nzv",
+    Image = "rbxassetid://4483345998",
+    Time = 100
+})
+
+
+
+OrionLib:MakeNotification({
+    Name = "WARN!",
+    Content = "script made by nzv",
+    Image = "rbxassetid://4483345998",
+    Time = 100
+})
+
+
+OrionLib:MakeNotification({
+    Name = "WARN!",
+    Content = "script made by nzv",
+    Image = "rbxassetid://4483345998",
+    Time = 100
+})
+
+
+OrionLib:MakeNotification({
+    Name = "WARN!",
+    Content = "script made by nzv",
+    Image = "rbxassetid://4483345998",
+    Time = 100
+})
+
+
+--[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+espTab:AddButton({
+    Name = "walkspeed high",
+    Callback = function()
+        local Players = game:GetService("Players")
+        local Player = Players.LocalPlayer
+        local Character = workspace:WaitForChild(Player.Name)
+        local Humanoid = Character:FindFirstChild("Humanoid")
+        
+        repeat wait() until Humanoid
+        
+        local WalkSpeedValue = 80
+        
+        local function ChangeWalkSpeed(Value)
+            Humanoid.WalkSpeed = Value
+        end
+        
+        ChangeWalkSpeed(WalkSpeedValue)
+    end    
+})
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+
+espTab:AddButton({
+    Name = "esp - click to enable",
+    Callback = function()
+        crashy = true
+        on = false
+        if game.CoreGui:FindFirstChild('ESP') then
+            game.CoreGui.ESP:Destroy()
+        elseif game.Players.LocalPlayer.PlayerGui:FindFirstChild('ESP') then
+            game.Players.LocalPlayer.PlayerGui.ESP:Destroy()
+        end
+         
+
+
+
+
+
+        function doit(hey)
+            local t1 = Instance.new('SurfaceGui',hey)
+            t1.AlwaysOnTop = true
+            local t1g = Instance.new('Frame',t1)
+            t1g.Size = UDim2.new(1,0,1,0)
+            t1g.BackgroundColor3 = t1.Parent.BrickColor.Color
+            local t2 = Instance.new('SurfaceGui',hey)      
+            t2.AlwaysOnTop = true
+            t2.Face = Enum.NormalId.Right
+            local t2g = Instance.new('Frame',t2)
+            t2g.Size = UDim2.new(1,0,1,0)
+            t2g.BackgroundColor3 = t2.Parent.BrickColor.Color
+            local t3 = Instance.new('SurfaceGui',hey)
+            t3.AlwaysOnTop = true
+            t3.Face = Enum.NormalId.Left
+            local t3g = Instance.new('Frame',t3)
+            t3g.Size = UDim2.new(1,0,1,0)
+            t3g.BackgroundColor3 = t3.Parent.BrickColor.Color
+            local t4 = Instance.new('SurfaceGui',hey)
+            t4.AlwaysOnTop = true
+            t4.Face = Enum.NormalId.Back
+            local t4g = Instance.new('Frame',t4)
+            t4g.Size = UDim2.new(1,0,1,0)
+            t4g.BackgroundColor3 = t4.Parent.BrickColor.Color
+            local t5 = Instance.new('SurfaceGui',hey)
+            t5.AlwaysOnTop = true
+            t5.Face = Enum.NormalId.Top
+            local t5g = Instance.new('Frame',t5)
+            t5g.Size = UDim2.new(1,0,1,0)
+            t5g.BackgroundColor3 = t5.Parent.BrickColor.Color
+            local t6 = Instance.new('SurfaceGui',hey)
+            t6.AlwaysOnTop = true
+            t6.Face = Enum.NormalId.Bottom
+            local t6g = Instance.new('Frame',t6)
+            t6g.Size = UDim2.new(1,0,1,0)
+            t6g.BackgroundColor3 = t6.Parent.BrickColor.Color
+        end
+        function undo(chr)
+            for i,v in pairs(chr:GetChildren()) do
+                if v.ClassName == "Part" or v.ClassName == "MeshPart" then
+                    for a,c in pairs(v:GetChildren()) do
+                        if c.ClassName == "SurfaceGui" then
+                            c:Destroy()
+                        end
+                        if c.ClassName == "BillboardGui" and c.Name == "thingyye" then
+                            c:Destroy()
+                        end
+                    end
+                end
+            end
+        end
+         
+        local gui = Instance.new('ScreenGui')
+        if crashy == false then
+            gui.Parent = game.CoreGui
+        else
+            gui.Parent = game.Players.LocalPlayer.PlayerGui
+        end
+        gui.Name = "ESP"
+        gui.ResetOnSpawn = false
+        local frame = Instance.new('Frame',gui)
+        frame.Size = UDim2.new(0.2,0,0.3,0)
+        frame.Position = UDim2.new(0,0,0.9,0)
+        frame.BackgroundTransparency = 0.5
+        frame.BackgroundColor3 = Color3.fromRGB(131,182,239)
+        frame.BorderSizePixel = 4
+        frame.BorderColor3 = Color3.fromRGB(66,134,244)
+        frame.Active = true
+        frame.Draggable = true
+        local txt = Instance.new('TextLabel',frame)
+        txt.Text = "nzv ESP Gui"
+        txt.TextColor3 = Color3.fromRGB(255,255,255)
+        txt.Size = UDim2.new(1,0,0.3,0)
+        txt.TextScaled = true
+        txt.BackgroundTransparency = 1
+        local but = Instance.new('TextButton',frame)
+        but.Text = "ESP On"
+        but.TextColor3 = Color3.fromRGB(255,255,255)
+        but.Size = UDim2.new(0.7,0,0.3,0)
+        but.Position = UDim2.new(0.15,0,0.5,0)
+        but.BorderSizePixel = 0
+        but.TextScaled = true
+        but.BackgroundColor3 = Color3.fromRGB(66,134,244)
+        but.BackgroundTransparency = 0.4
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v.Character ~= nil then
+                undo(v.Character)
+            end
+        end
+         
+        but.MouseButton1Down:connect(function()
+        if but.Text == "ESP On" then
+        but.Text = "ESP Off"
+        on = true
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v.Character ~= game.Players.LocalPlayer.Character and v.Character.Head:FindFirstChild('ScreenGui') == nil then
+                if v.Character:FindFirstChild('Head') then
+                    local bill = Instance.new('BillboardGui',v.Character.Head)
+                    bill.Name = "thingyye"
+                    bill.AlwaysOnTop = true
+                    bill.Size = UDim2.new(2,1,2)
+                    bill.Adornee = v.Character.Head
+                    local txt = Instance.new('TextLabel',bill)
+                    txt.Text = v.Name
+                    txt.BackgroundTransparency = 1
+                    txt.Size = UDim2.new(1,0,1,0)
+                    txt.TextColor3 = v.TeamColor.Color
+                end
+                for a,c in pairs(v.Character:GetChildren()) do
+                    if c.ClassName == "MeshPart" and c.Transparency ~= 1 then
+                        doit(c)
+                    elseif c.ClassName == "Part" and c.Transparency ~= 1 then
+                    doit(c)
+                    end
+                end
+            end
+        end
+        else
+            but.Text = "ESP On"
+            on = false
+            for i,v in pairs(game.Players:GetChildren()) do
+                undo(v.Character)
+            end
+        end
+        end)
+         
+        for i,v in pairs(game.Players:GetChildren()) do
+            v.CharacterAdded:connect(function()
+            v.Character:WaitForChild('Head')
+            wait(1)
+            if on == true then
+            if v.Character ~= game.Players.LocalPlayer.Character and v.Character.Head:FindFirstChild('ScreenGui') == nil then
+                if v.Character:FindFirstChild('Head') then
+                    local bill = Instance.new('BillboardGui',v.Character.Head)
+                    bill.Name = "thingyye"
+                    bill.AlwaysOnTop = true
+                    bill.Size = UDim2.new(2,1,2)
+                    bill.Adornee = v.Character.Head
+                    local txt = Instance.new('TextLabel',bill)
+                    txt.Text = v.Name
+                    txt.BackgroundTransparency = 1
+                    txt.Size = UDim2.new(1,0,1,0)
+                    txt.TextColor3 = v.TeamColor.Color
+                end
+                for a,c in pairs(v.Character:GetChildren()) do
+                    if c.ClassName == "MeshPart" and c.Transparency ~= 1 then
+                        doit(c)
+                    elseif c.ClassName == "Part" and c.Transparency ~= 1 then
+                    doit(c)
+                    end
+                end
+            end
+            end
+            end)
+        end  
+         
+        game.Players.PlayerAdded:connect(function(v)
+        v.CharacterAdded:connect(function()
+            v.Character:WaitForChild('Head')
+            wait(1)
+            if on == true then
+            if v.Character ~= game.Players.LocalPlayer.Character and v.Character.Head:FindFirstChild('ScreenGui') == nil then
+                if v.Character:FindFirstChild('Head') then
+                    local bill = Instance.new('BillboardGui',v.Character.Head)
+                    bill.Name = "thingyye"
+                    bill.AlwaysOnTop = true
+                    bill.Size = UDim2.new(2,1,2)
+                    bill.Adornee = v.Character.Head
+                    local txt = Instance.new('TextLabel',bill)
+                    txt.Text = v.Name
+                    txt.BackgroundTransparency = 1
+                    txt.Size = UDim2.new(1,0,1,0)
+                    txt.TextColor3 = v.TeamColor.Color
+                end
+                for a,c in pairs(v.Character:GetChildren()) do
+                    if c.ClassName == "MeshPart" and c.Transparency ~= 1 then
+                        doit(c)
+                    elseif c.ClassName == "Part" and c.Transparency ~= 1 then
+                    doit(c)
+                    end
+                end
+            end
+            end
+            end)
+        end)
+    end    
+})
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+
+
+
+
+OrionLib:MakeNotification({
+    Name = "NOTE!",
+    Content = "why is u so sigma LOL",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+
+
+
+
+
